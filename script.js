@@ -7,4 +7,4 @@ window.addEventListener("scroll", function() {
     } else {
       navbar.classList.remove("scrolled");
     }
-  });   
+});   
