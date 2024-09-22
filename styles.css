@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+#navbar {
+  position: fixed; /* Ensures the navbar stays at the top of the page */
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  color: #FFFFFF;
+  background: transparent; /* Navbar starts off transparent */
+  transition: background-color 0.3s ease; /* Smooth transition to white on scroll */
+  z-index: 1000; /* Ensure it stays above other content */
+  display: flex;
+  justify-content: center; /* Center the navbar content horizontally */
+  align-items: center;
+}
+
+#navbar.scrolled {
+  background-color: white; /* Change to white when scrolled */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+#navbar.scrolled {
+  color: #000000;
+}
+
+#navbar.scrolled .nav-links a {
+  color: #000000; /* Change link color to black when scrolled */
+}
+
+#navbar.scrolled .search-icon {
+  color: #000000;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFFFFF; /* Default link color */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 20px; /* Keep the logo on the left side */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  color: #FFFFFF;
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  padding: 10px 20px;
+  display: block;
+  white-space: nowrap;
+  color: black;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Add chevron-down icon next to Services */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle i {
+  margin-left: 5px;
+}
+
+/* Magnifying glass icon styling */
+.search-icon {
+  margin-left: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 150px; /* Adjust position */
+  color: #FFFFFF;
+}
+
+/* Contact Us button styling */
+.contact-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Positioning the button to the right */
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+#home {
+  height: 100vh; /* Takes up the full viewport height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+  background-image: url("/assets/1106129fd572fda500f591c40b284e6f");
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent background repetition */
+  margin-top: 0; /* Ensure there's no margin */
+  padding-top: 0; /* Prevent padding from pushing content down */
+  z-index: 500;
+}
+
+section {
+  padding: 100px 20px;
+}
+
+section:nth-child(even) {
+  background-color: #f4f4f4;
+}
