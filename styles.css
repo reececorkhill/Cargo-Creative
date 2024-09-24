@@ -151,7 +151,7 @@ body {
   background-color: #0056b3;
 }
 
-#main-header {
+#main-header, #secondary-header {
   height: 100vh; /* Takes up the full viewport height */
   display: flex;
   flex-direction: column;
@@ -160,6 +160,23 @@ body {
   text-align: center;
   color:#FFFFFF;
   background-image: url("/assets/1106129fd572fda500f591c40b284e6f");
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent background repetition */
+  margin-top: 0; /* Ensure there's no margin */
+  padding-top: 0; /* Prevent padding from pushing content down */
+  z-index: 500;
+}
+
+#secondary-header {
+  height: 100vh; /* Takes up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+  color:#FFFFFF;
+  background-image: url("/assets/brooke-cagle-NoRsyXm.png");
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent background repetition */
@@ -220,14 +237,14 @@ body {
 
 .main-buttons {
   position: absolute;
-  top: 80vh;
+  top: 90vh;
   left: 20vh;
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   text-align: center;
 }
 
-#show-main-btn {
+.show-main-btn {
   height: 7.5px;
   width: 55px;
   margin-right: 10px;
@@ -238,7 +255,7 @@ body {
   color:white;
 }
 
-#show-secondary-btn {
+.show-secondary-btn {
   height: 7.5px;
   width: 55px;
   border: solid;
@@ -246,6 +263,14 @@ body {
   background-color:#6d6d6dbe;
   border:none;
   color:white;
+}
+
+.selected {
+  background-color:#FFFFFF;
+}
+
+.not-selected {
+  background-color:#6d6d6dbe;
 }
 
 section {
