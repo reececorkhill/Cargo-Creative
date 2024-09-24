@@ -50,7 +50,7 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 38px;
   font-weight: bold;
   position: absolute;
   left: 20px; /* Keep the logo on the left side */
@@ -72,8 +72,8 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: lighter;
 }
 
 /* Dropdown styles */
@@ -99,6 +99,8 @@ body {
   display: block;
   white-space: nowrap;
   color: black;
+  font-size: 22px;
+  font-weight: lighter;
 }
 
 .dropdown-menu li a:hover {
@@ -159,7 +161,9 @@ body {
   align-items: center; /* Center content vertically */
   text-align: center;
   color:#FFFFFF;
-  background-image: url("/assets/1106129fd572fda500f591c40b284e6f");
+  background-image: 
+    linear-gradient(to left, rgba(255, 255, 255, 0.025), rgba(0, 0, 59, 0.695)),
+    url("/assets/1106129fd572fda500f591c40b284e6f");
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent background repetition */
@@ -176,7 +180,9 @@ body {
   align-items: center; /* Center content vertically */
   text-align: center;
   color:#FFFFFF;
-  background-image: url("/assets/brooke-cagle-NoRsyXm.png");
+  background-image: 
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(11, 33, 66, 0.815)),
+    url("/assets/brooke-cagle-NoRsyXm.png");
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent background repetition */
