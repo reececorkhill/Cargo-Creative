@@ -10,23 +10,39 @@ body {
 }
 
 #navbar {
-  position: fixed; /* Ensures the navbar stays at the top of the page */
+  position: fixed;
   top: 0;
   width: 100%;
   padding: 20px;
   padding-top: 50px;
   color: #FFFFFF;
-  background: transparent; /* Navbar starts off transparent */
-  transition: background-color 0.3s ease; /* Smooth transition to white on scroll */
-  z-index: 1000; /* Ensure it stays above other content */
+  background: transparent;
+  transition: background-color 0.4s ease;
+  z-index: 1000;
   display: flex;
-  justify-content: center; /* Center the navbar content horizontally */
+  justify-content: center;
   align-items: center;
 }
 
+#navbar:hover li a {
+  color: #000000;
+}
+
+#navbar:hover {
+  background-color: #FFFFFF;
+}
+
+#navbar:hover .logo {
+  color:#000000;
+}
+
+#navbar:hover .search-icon {
+  color:#000000;
+}
+
 #navbar.scrolled {
-  background-color: white; /* Change to white when scrolled */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding-top: 20px;
 }
 
@@ -35,25 +51,11 @@ body {
 }
 
 #navbar.scrolled .nav-links a {
-  color: #000000; /* Change link color to black when scrolled */
+  color: #000000;
 }
 
 #navbar.scrolled .search-icon {
   color: #000000;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #FFFFFF; /* Default link color */
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.logo {
-  font-size: 38px;
-  font-weight: bold;
-  position: absolute;
-  left: 20px; /* Keep the logo on the left side */
 }
 
 .nav-links {
@@ -73,25 +75,69 @@ body {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 18px;
-  font-weight: lighter;
+  font-weight: light;
 }
 
-/* Dropdown styles */
+.logo {
+  font-size: 38px;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  z-index: 1500;
+}
+
 .dropdown-menu {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0vh;
   left: 0;
+  right: 0;
+  height: 65vh;
   background-color: white;
   list-style: none;
-  padding: 0;
+  padding: 20px;
   margin: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  z-index: 0;
+  justify-content: space-around;
+}
+
+.card {
+  position: absolute;
+  top: 20vh;
+  left: 120vh;
+  width: 280px;
+  height: 380px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  color:#000000;
+}
+
+.card img {
+  border-radius: 5px;
+}
+
+#header-subline {
+  color:#717171;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 100px;
+  z-index: -500;
+}
+
+.dropdown:hover .dropdown-menu li a {
+  font-size: 18px;
+  width: 35vw;
+  margin-left: 20vw;
 }
 
 .dropdown-menu li {
-  margin: 0;
+  margin: 10px;
 }
 
 .dropdown-menu li a {
@@ -104,37 +150,25 @@ body {
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f4f4f4;
+  color:#7dc623 !important;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown-toggle:hover {
+  color:#7dc623 !important;
 }
 
-/* Add chevron-down icon next to Services */
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-}
-
-.dropdown-toggle i {
-  margin-left: 5px;
-}
-
-/* Magnifying glass icon styling */
 .search-icon {
   margin-right: 50px;
   font-size: 18px;
   cursor: pointer;
   position: absolute;
-  right: 150px; /* Adjust position */
+  right: 150px;
   color: #FFFFFF;
+  z-index: 1500;
 }
 
-/* Contact Us button styling */
 .contact-btn {
-  background-color: #007bff;
+  background-color: #81bf3f;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -142,7 +176,9 @@ body {
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  right: 20px; /* Positioning the button to the right */
+  right: 20px;
+  z-index: 1500;
+  font-weight: bold;
 }
 
 #contact-arrow {
@@ -150,48 +186,29 @@ body {
 }
 
 .contact-btn:hover {
-  background-color: #0056b3;
+  background-color: #7db83e;
 }
 
-#main-header, #secondary-header {
-  height: 100vh; /* Takes up the full viewport height */
+#header {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color:#FFFFFF;
   background-image: 
     linear-gradient(to left, rgba(255, 255, 255, 0.025), rgba(0, 0, 59, 0.695)),
     url("/assets/1106129fd572fda500f591c40b284e6f");
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent background repetition */
-  margin-top: 0; /* Ensure there's no margin */
-  padding-top: 0; /* Prevent padding from pushing content down */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 0;
+  padding-top: 0;
   z-index: 500;
 }
 
-#secondary-header {
-  height: 100vh; /* Takes up the full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  text-align: center;
-  color:#FFFFFF;
-  background-image: 
-    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(11, 33, 66, 0.815)),
-    url("/assets/brooke-cagle-NoRsyXm.png");
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent background repetition */
-  margin-top: 0; /* Ensure there's no margin */
-  padding-top: 0; /* Prevent padding from pushing content down */
-  z-index: 500;
-}
-
-#main-header h1 {
+#header h1 {
   position: absolute;
   top: 30vh;
   left: 20vh;
@@ -232,21 +249,22 @@ body {
   text-wrap: wrap;
   text-decoration: underline; 
   text-underline-offset: 10px;
+  font-size: 20px;
 }
 
 #find-out-arrow {
   position: relative;
   top: 0.25vh;
   margin-left: 25px;
-  color: #FFD43B;
+  color: #ffeb3a;
 }
 
 .main-buttons {
   position: absolute;
   top: 90vh;
   left: 20vh;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -285,4 +303,105 @@ section {
 
 section:nth-child(even) {
   background-color: #f4f4f4;
+}
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .search-icon {
+    margin-right: 10px;
+  }
+
+  .contact-btn {
+    margin-right: 0;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  #header h1 {
+    font-size: 48px;
+  }
+
+  #header-subtitle {
+    font-size: 24px;
+  }
+
+  #header-tagline {
+    font-size: 16px;
+  }
+
+  #header-h2 {
+    font-size: 20px;
+  }
+
+  .main-buttons {
+    flex-direction: column;
+  }
+
+  .show-main-btn, .show-secondary-btn {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .search-icon {
+    font-size: 16px;
+  }
+
+  .contact-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  #header h1 {
+    font-size: 32px;
+  }
+
+  #header-subtitle {
+    font-size: 20px;
+  }
+
+  #header-tagline {
+    font-size: 14px;
+  }
+
+  #header-h2 {
+    font-size: 18px;
+  }
+
+  .main-buttons {
+    margin-top: 40px;
+  }
+
+  .show-main-btn, .show-secondary-btn {
+    width: 35px;
+  }
 }
